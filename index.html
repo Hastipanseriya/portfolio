@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <title>Hasti's Portfolio</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(to right, #e0ecff, #ffffff);
+        font-family: "Poppins", sans-serif;
+        color: #2c3e50;
+        line-height: 1.6;
+      }
+
+      nav {
+        background-color: #1c41a8;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav .left {
+        font-size: 1.7rem;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 1000;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #85b9f4;
+        font-size: 1.2rem;
+      }
+
+      .firstsection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 20px;
+        gap: 40px;
+        background-color: #f0f4ff;
+      }
+
+      .leftsection {
+        flex: 1;
+        max-width: 500px;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #1e3a8a;
+      }
+
+      .leftsection .purple {
+        color: #6d28d9;
+      }
+
+      .rightsection {
+        flex: 1;
+        max-width: 400px;
+      }
+
+      .rightsection img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .secondsection {
+        padding: 50px 20px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+
+      .secondsection h1 {
+        color: #1d4ed8;
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+
+      .secondsection .box {
+        max-width: 800px;
+        margin: auto;
+        font-size: 1.1rem;
+        color: #374151;
+      }
+
+      .thirdsection {
+        padding: 60px 20px;
+        background-color: #f8fafc;
+        text-align: center;
+      }
+
+      .thirdsection h2 {
+        color: #1e3a8a;
+        font-size: 2rem;
+        margin-bottom: 80px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      .skillcard {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        font-weight: 500;
+        color: #1f2937;
+      }
+
+      .skillcard:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        background-color: #1b6ca1;
+        color: #f6f8fd;
+      }
+
+      @media (max-width: 768px) {
+        .leftsection,
+        .rightsection {
+          text-align: center;
+        }
+
+        .leftsection {
+          font-size: 2rem;
+        }
+      }
+
+      
+
+      .forthsection {
+        max-width: 80vw;
+        margin: auto;
+        padding: 40px 0;
+      }
+
+      h2 {
+        font-size: 2rem;
+        color: #13306e;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .educationcontainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .educationcard {
+        background-color: #f3f4f6;
+        padding: 20px;
+        border-left: 6px solid #3b82f6;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(58, 119, 241, 0.8);
+        transition: 0.3s ease-in-out;
+        color: #1f2937;
+      }
+
+      .educationcard:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgb(12, 8, 119, 0.8);
+      }
+
+      .fifthsection {
+        max-width: 100vw;
+        margin: auto;
+        padding: 50px 0;
+        background-color: #edf2f9;
+        color: #1f2937;
+        border-radius: 12px;
+        align-items: center;
+      }
+
+      .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .contactform {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 500px;
+        background: #5292e0;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(7, 23, 103, 0.7);
+      }
+
+      .contactform input,
+      .contactform textarea {
+        padding: 15px;
+        border: 0.6px solid #406f9c;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      .contactform button {
+        background-color: #204eb0;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .contactform button:hover {
+        background-color: #132560;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #192643;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+            }
+
+        .social-links a:hover {
+             color: #153899;
+        }
+        .connect{
+            color: #14316e;
+            margin: 10px 0;
+            font-size:1.4rem;
+            font-family: inherit;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="left">Hasti's Portfolio</div>
+        <ul class="right">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="firstsection" id="home">
+      <div class="leftsection">
+        Hi, my name is <span class="purple">Hasti</span>,
+        <div>and I am a passionate</div>
+        <div><span id="element"></span></div>
+      </div>
+      <div class="rightsection">
+        <img src="img1.png" alt="Developer Image" />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="secondsection" id="about">
+      <h1>About Me</h1>
+      <div class="box">
+        Hi! I'm Hasti Patel, a passionate and self-driven web developer focused
+        on creating clean, responsive, and user-friendly websites. I enjoy
+        solving real-world problems using web technologies like HTML, CSS,
+        JavaScript, and React. I'm currently learning backend tools like
+        Node.js and MongoDB and open to freelance, internship, or open-source
+        opportunities.
+
+         <p class="connect">Connect with me:</p>
+        <div class="social-links">
+             <a href="https://www.linkedin.com/in/hasti-patel-9399bb32b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+            <i class="fab fa-linkedin fa-2x"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Hastipanseriya" target="_blank">
+              <i class="fab fa-github fa-2x"></i> GitHub
+            </a>
+         </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="thirdsection" id="skill">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skillcard" data-aos="fade-up">HTML</div>
+        <div class="skillcard" data-aos="fade-up" data-aos-delay="100">CSS3</div>
+        <div class="skillcard" data-aos="fade-up" data-aos-delay="200">JavaScript</div>
+        <div class="skillcard" data-aos="fade-up" data-aos-delay="300">MySQL</div>
+        <div class="skillcard" data-aos="fade-up" data-aos-delay="400">Problem Solving</div>
+        <div class="skillcard" data-aos="fade-up" data-aos-delay="500">Communication</div>
+         <div class="skillcard" data-aos="fade-up" data-aos-delay="600">Adaptability</div>
+          <div class="skillcard" data-aos="fade-up" data-aos-delay="700">Creativity</div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="forthsection" id="education">
+        <h2>Education</h2>
+        <div class="educationcontainer">
+            <div class="educationcard" data-aos="fade-right">
+                 <h3>Bachelor of Technology (B.Tech) in Computer Science</h3>
+                    <p>Sarvajnik College Of Engineering And Technology, Surat</p>
+                    <p>2022 – 2026</p>
+            </div>
+            <div class="educationcard" data-aos="fade-left">
+                    <h3>12th Grade 84% HSC</h3>
+                    <p>GSEB Board</p>
+                    <p>2022</p>
+            </div>
+            <div class="educationcard" data-aos="fade-up">
+                    <h3>10th Grade 89% SSC</h3>
+                    <p>GSEB Board</p>
+                    <p>2020</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="fifthsection" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container" data-aos="fade-up">
+            <form class="contactform">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Web Developer", "Frontend Designer", "JavaScript Coder"],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+      });
+    </script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+      });
+    </script>
+  </body>
+</html>
